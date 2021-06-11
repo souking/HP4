@@ -1,0 +1,164 @@
+/* h1{
+  color: skyblue;
+} */
+/* .info{
+  color: skyblue;
+}
+.title{
+  font-weight: normal;
+} */
+
+/* #2、classセレクター
+要素型セレクターは付けたい場所（h1）をそのまま書く
+クラス属性の設定は、「.」の後にクラス名を書く
+クラス属性にする事で例えば、h1をh2に変更したい時にわざわざ名前を変えなくても良い
+一つのセレクターの中にクラス属性は複数設定することができる
+例えば、HTMLのクラス属性を「info title」にすると両方になる */
+
+
+
+ /* #title {
+   color: pink;
+ }
+ * {
+   font-size: 12px;
+ } */
+ 
+ /* #3、idセレクター、全称セレクター 
+ idセレクターはcssでは＃をつけてその後に識別子を書く
+ 同じページ内で同じ名前を使ってはいけない（例、h1とh2のidをtitleにできない、識別子を違う名前にする）
+ id属性は空白を含めてはいけないので、class属性のように複数の値を指定できない
+全称セレクターはcssで＊をつけその後にカッコをつける
+これは全ての要素に適用される */
+
+
+
+
+ /* [target] { */
+ /* [href="#top"] { */
+ /* [href^="https"] { */
+ /* [href$="dotinstall"] { */
+ /* [href*="com"] {
+   font-weight: bold; */
+ /* } */
+ /* 
+ #4、属性セレクター 
+ {}の前に[]で中に属性があるところだけを指定できる
+ 前方一致（最初の方の一部分だけ）のときは^の記号を=の前につける
+ 後方一致のときは＄
+ 部分一致の時は＊
+ */
+
+
+
+
+ /* h1::before,
+ h2::before {
+   content: '- ';
+ }
+ h1::after,
+ h2::after { */
+   /* content: ' -'; */
+   /* content: attr(data-subtitle);
+ } */
+ /* 
+ #6、::before、::afterの擬似要素
+ タグの名前の後に::before afterそれぞれ作り、中にはcontentを必須でその後から文字を書く
+ コンテント属性の値を要素によって変えたい場合は、HTMLの要素にデータを持たせることもできる
+ HTMLではdataで始まれば独自の属性をつけられる（カスタムデータ属性）
+ 今回はdata-subtitleにしている
+ cssではcontentの後にattrという命令を使い、（カスタムデータ属性の名前）にする
+ */
+
+
+
+
+ /* .btn {
+   width: 100px;
+   background: skyblue;
+   text-align: center;
+   padding: 4px;
+   color: white;
+   cursor: pointer;
+ }
+ .btn:hover{
+   opacity: 0.8;
+ } */
+ /* 
+ #7、:hover擬似クラス
+ マウスカーソルが上に乗った時に色が変わるようにするには、マウスカーソルが上に乗ったを表す:hoverを使う
+ また、カーソルの形を変えるには擬似クラスではない方でcursorプロパティを使う
+ pointerにすると指の形になる
+ */
+
+
+
+
+ /* main > :nth-child(3) {
+   background: pink;
+ } */
+ /* main > :nth-child(3n) {
+   background: pink;
+ } */
+ /* /* main > :nth-child(odd) {
+   background: pink;
+ } */
+ /* main > :nth-child(even) {
+   background: skyblue;
+ } */
+ /* main > :first-child {
+   background: pink;
+ }
+ main > :last-child {
+   background: skyblue;
+ } */
+/* 
+#8、:nth-child擬似クラス
+同じ階層の同じ要素の中の一部分だけにスタイルをつける場合に使う
+mainの直下という意味でmain >にする
+()の中身は何個めかを表す
+中身を３nにすると３の倍数の列、oddは奇数番目、evenは偶数番目
+また、最初だけの場合はfirst-child、最後の場合はlast-childとする
+*/
+
+
+
+
+/* main > h2:nth-of-type(3){
+  background: pink;
+} */
+/* 
+#9、:nth-of-type()
+例えば、同じ階層にいくつか要素がある場合（３番目のh2のスタイルを変えたい場合）に使う
+またこれもeven,odd,last,firstが使える
+*/
+
+
+
+/* li:empty {
+  background: skyblue;
+} */
+/* li:not(:empty) {
+  background: skyblue;
+} */
+/* 
+#10、:enpty,:not
+空の要素（中に空白や改行がない場合、コメントはあっても良い）を選択する時に:emptyを使う
+また、否定を表す:not()は逆になる(例、:not(:empty)とすると逆のことが起こる)
+*/
+
+
+
+
+/* h1 { color: red !important;}
+h1#main.box { color: yellow;}
+section > #main.title {color: blue;}
+section#about > h1 {color: pink;} */
+
+/* 
+#11,12、スタイル詳細度
+例えば、これら４行のでれが優先されるか
+(id これは#のやつ) (class、属性、擬似クラス これは.がついてるもの) (要素、擬似要素 これはh1など)左から一行に含まれる数が多い順に優先される
+また、これらよりもstyle属性に直接書いた方が優先される
+また、一番優先されるのはcssの方に!importantとつけてあげる、これは上書きされていく
+*/
