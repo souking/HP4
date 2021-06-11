@@ -150,10 +150,10 @@ mainの直下という意味でmain >にする
 
 
 
-/* h1 { color: red !important;}
+h1 { color: red !important;}
 h1#main.box { color: yellow;}
 section > #main.title {color: blue;}
-section#about > h1 {color: pink;} */
+section#about > h1 {color: pink;}
 
 /* 
 #11,12、スタイル詳細度
